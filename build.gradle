@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.2' // 프로젝트에 사용할 플러그인
+    id 'io.spring.dependency-management' version '1.1.0' // 스프링의 의존성을 자동으로 관리
+}
+
+group = 'me.yeochan'
+version = '1.0'
+sourceCompatibility = '17' // 자바 소스를 컴파일 할 때 사용할 자바 버전
+
+repositories {
+    mavenCentral() // 의존성을 받을 저장소 지정
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-configuration-processor'// 웹 관련 기능 제공
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' // 테스트 기능 제공
+
+    // 스프링 데이터 JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.h2database:h2' // 인메모리 데이터베이스
+    compileOnly 'org.projectlombok:lombok' // 롬복
+    annotationProcessor 'org.projectlombok:lombok'
+}
+
+test {
+    useJUnitPlatform()
+}
