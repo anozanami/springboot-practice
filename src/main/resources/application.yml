@@ -1,0 +1,18 @@
+# yml 파일 작성할 때 들여쓰기 레벨을 잘 신경써야한다.
+# 들여쓰기 레
+spring:
+  jpa:
+    #전송 쿼리 확인, show-sql & format-sql : 모든 실행 구문을 보여주는 옵션
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+  h2:
+    console:
+      enabled: true
+
+    # 테이블 생성 후에 data.sql 실행
+    defer-datasource-initialization: true
